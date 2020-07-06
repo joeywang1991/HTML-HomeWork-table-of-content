@@ -1,0 +1,23 @@
+body{
+    border: 5px solid purple;
+    width: 100%;
+    height: 2000px;
+}
+.full{
+    width: 100%;
+    border: 5px solid blue;
+    display: flex;
+    justify-content: center;
+}
+.pagesetting{
+    width: 1200px;
+    border: 5px solid red;
+    display: flex;
+    justify-content: space-between;
+}
+.content{
+    width: 30%;
+    height: 200px;
+    border: 5px solid green;
+    margin: 10px;
+}
