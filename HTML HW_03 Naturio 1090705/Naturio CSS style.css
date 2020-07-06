@@ -62,12 +62,12 @@ body{
 .green {
     width: 100%;
     height: 850px;    
-    background-image: url(/img/asset36.png);
+    background-image: url(img/asset36.png);
     align-items: center;
 }
 .green .item{
     display: block;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .green .item p{
     width: 578px;
@@ -165,7 +165,7 @@ body{
 }
 
 .fruit{
-    background-image: url(/img/asset37.png);
+    background-image: url(img/asset37.png);
     width: 100%;
     height: 650px;    
     text-align: center;
@@ -207,7 +207,7 @@ body{
     color: #888888;
 }
 .latest{
-    background-image: url(/img/asset38.png);
+    background-image: url(img/asset38.png);
     background-size:contain ;
     background-repeat: repeat;
     height: 700px;
@@ -281,7 +281,7 @@ body{
 }
 
 .our {
-    background-image: url(/img/asset39.png);
+    background-image: url(img/asset39.png);
     height: 650px;
     align-items: center;    
     color: #ffffff;
@@ -328,7 +328,7 @@ body{
     margin: 0 15px;
 }
 .footer {
-    background-image: url(/img/asset41.png);
+    background-image: url(img/asset41.png);
     /* height: 400px; */
     align-items: center;
     padding: 150px 0 50px 0;
