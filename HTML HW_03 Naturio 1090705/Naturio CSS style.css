@@ -67,7 +67,7 @@ body{
 }
 .green .item{
     display: block;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 .green .item p{
     width: 578px;
