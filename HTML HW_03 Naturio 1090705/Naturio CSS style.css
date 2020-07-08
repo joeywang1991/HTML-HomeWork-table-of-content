@@ -4,14 +4,15 @@ body{
     font-family: "微軟正黑體";
 }
 .full {      
-    display: flex;
+    /* display: flex; */
     /* border: 1px solid blue; */
-    justify-content: center;    
+    /* justify-content: center;     */
     background-repeat:no-repeat ;
     background-size: cover;
 }
 .pageset {
     width: 1200px; 
+    margin: auto;
     /* border: 1px solid black; */
 }
 .title{

@@ -1,0 +1,88 @@
+body{
+    width: 100%;
+    font-family: '微軟正黑體';
+    height: 1000px;
+}
+.fullpage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+.pagesetting{
+    width: 960px;
+    border: 1px solid blue;
+}
+.righticon{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 25px;
+    bottom: 50px;
+}
+/* .circle{
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 100%;
+    overflow: hidden;    
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+} */
+
+.blackbg {
+    background-color: #000000;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+.blackbg .title{
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;    
+}
+.blackbg .title span{
+    padding: 20px 55px;
+}
+.blackbg .title span:hover{
+    border-bottom:3px solid #e7211b ;
+}
+
+.advantage{
+    text-align: center;
+}
+.five span{
+    font-size: 40px;
+    color: #333333;
+    font-weight: 1000;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.five span::after{
+    content: '';    
+    width: 55px;
+    height: 5px;
+    background-color: black;
+    margin-top: 15px;
+}
+.advantage .fiveitems{
+    display: flex;
+    justify-content: space-evenly;
+}
+.advantage .fiveitems span{
+    width: 170px;
+    font-size: 20px;
+    border: 1px dotted gray;
+    border-bottom: 3px solid rgb(160, 11, 11);
+    padding: 5px;
+    margin: 40px 0;
+}
+
