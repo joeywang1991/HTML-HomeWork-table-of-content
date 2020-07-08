@@ -2,7 +2,6 @@
 body {
   width: 100%;
   font-family: '微軟正黑體';
-  height: 1000px;
 }
 
 .fullpage {
@@ -29,7 +28,7 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 100;
 }
 
 .blackbg .title {
@@ -82,6 +81,7 @@ body {
 
 .advantage .fiveitems a:hover {
   background-color: #a00b0b;
+  color: white;
   -webkit-transition: 0.5;
   transition: 0.5;
 }
@@ -249,23 +249,23 @@ body {
   margin-left: 80px;
 }
 
-.left {
+.movetoright {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
   height: 735px;
 }
 
-.left .bagimg {
+.movetoright .bagimg {
   left: 100px;
 }
 
-.left .arrow {
+.movetoright .arrow {
   -webkit-transform: translate(-815px, -100px);
           transform: translate(-815px, -100px);
 }
 
-.left .grey {
+.movetoright .grey {
   margin-right: 120px;
   height: 400px;
 }

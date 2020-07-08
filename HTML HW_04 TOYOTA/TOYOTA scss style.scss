@@ -1,7 +1,6 @@
 body {
     width: 100%;
     font-family: '微軟正黑體';
-    height: 1000px;
 }
 
 .fullpage {
@@ -23,7 +22,7 @@ body {
     color: white;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 100;
 
 
     .title {
@@ -211,7 +210,7 @@ body {
     }
 }
 
-.left {
+.movetoright {
     align-items: flex-end;
     height: 735px;
 
