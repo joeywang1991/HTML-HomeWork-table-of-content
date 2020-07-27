@@ -117,9 +117,13 @@ body {
           align-items: center;
 }
 
+.slides .title .bs {
+  text-align: center;
+  margin: 10px 0 0 20px;
+}
+
 .slides .title .bs h2 {
   font-size: 20px;
-  margin-bottom: 10px;
 }
 
 .slides .title .bs:active ~ .titlebut {
