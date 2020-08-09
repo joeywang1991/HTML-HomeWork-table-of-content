@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <link rel="stylesheet" href="Calender_CSS.css">
+</head>
+
+<body>
+    <h1 class="text-center">行事曆</h1>
+    <div class="w-75 mx-auto my-2 d-flex justify-content-around">
+        <button class="btn btn-primary px-5" id="left"> ← </button>
+        <h2 id="title"></h2>
+        <button class="btn btn-primary px-5" id="right"> → </button>
+    </div>
+    <table class="w-75 mx-auto">
+        <thead class=" text-center">
+            <tr>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 顯示月份欄位 -->
+        </tbody>
+    </table>
+
+
+    <!-- Modal01 第一層顯示代辦事項 -->
+    <div class="modal fade" id="Modal01" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content p-3" id="modal01-h">
+                <div class="modal-header">
+                    <h5 class="modal-title">代辦事項</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body overflow-auto">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal02"
+                        data-dismiss="modal">新增代辦事項</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal02 第二層顯示加入代辦事項-->
+    <div class="modal fade" id="Modal02" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title">新增代辦事項</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form>
+                    <div class="form-group  mt-2">
+                        <label for="exampleInputitem">請輸入代辦事項</label>
+                        <input type="text" class="form-control" id="exampleInputitem" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputtime">輸入日期</label>
+                        <input type="time" class="form-control" id="exampleInputtime">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id='addbtn'>新增</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="Calender_JS.js"></script>
+    <script>
+        let today = new Date() //今天日期
+        console.log(today);
+        let year = today.getFullYear();
+        let month = today.getMonth();
+        let day = today.getDate();
+
+        Getdate(year, month);
+
+
+        let left = document.getElementById('left');
+        left.addEventListener('click', function () {
+            Cleanpage();
+            month = month - 1
+            if (month == -1) {
+                month = 11;
+                year = year - 1;
+            }
+            Getdate(year, month);
+        });
+
+        let right = document.getElementById('right');
+        right.addEventListener('click', function () {
+            Cleanpage();
+            month = month + 1
+            if (month == 12) {
+                month = 0;
+                year = year + 1
+            }
+            Getdate(year, month);
+            Sayhello();
+        });
+
+        let addbtn = document.getElementById('addbtn')
+        addbtn.addEventListener('click', function(){
+            Savedata();
+        });
+    </script>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

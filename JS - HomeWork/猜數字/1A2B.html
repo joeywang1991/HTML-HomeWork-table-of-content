@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/1A2B_CSS.css">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container px-4">
+        <div class="row">
+            <div class="btn-group text-right my-3" role="group" aria-label="Basic example">
+                <button type="button" class="btn" id="star">開始</button>
+                <button type="button" class="btn" id="reset">放棄重來</button>
+                <button type="button" class="btn" id="showans">看答案</button>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="list-group my-3" id="box">
+                <!-- 作答顯示區 -->
+            </ul>
+        </div>
+        <div class="row">
+            <div class="input-group my-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">猜答案</span>
+                </div>
+                <input type="text" class="form-control" id="guess">
+                <div class="input-group-append">
+                    <button type="button" class="btn input-group-text" id="check">猜</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let ans = [];
+        //      第一排按鈕
+        var star = document.getElementById('star');
+        console.log(star);
+        star.addEventListener('click', function () {
+            document.getElementById('box').innerHTML='';
+            Createanswer(ans);
+            console.log(ans);            
+            Btnhidden(true);
+        });
+
+        var reset = document.getElementById('reset');
+        reset.addEventListener('click', function () {
+            Showanswer(ans);
+            console.log(ans);
+            Btnhidden(false);     
+            box.innerHTML += '<span>請按 開始 進行下一輪遊戲<span>';       
+        });
+
+        var showans = document.getElementById('showans');
+        showans.addEventListener('click', function () {
+            console.log(ans);
+            Showanswer(ans);
+        });
+
+
+        //      下層按鈕
+        var guess = document.getElementById('guess');
+        console.log(ans);
+
+        var check = document.getElementById('check');
+        console.log(check);
+        check.addEventListener('click', function () {
+
+
+            
+            console.log(Check(guess.value, ans));
+            Createli(Check(guess.value, ans),guess.value);
+            console.log(typeof(parseInt(guess.value,10)));
+        });
+
+    </script>
+    <script src="/1A2B_Function.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

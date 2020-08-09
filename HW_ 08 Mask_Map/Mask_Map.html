@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJzDqFEscYrGoCxwE5yYPmrlpdyXQP32U&callback=initMap&libraries=&v=weekly"
+        defer>
+    </script>
+    <script src="https://kit.fontawesome.com/bff1bb511a.js" crossorigin="anonymous"></script>
+
+    <title>Mask Map!</title>
+    <style>
+        #box {
+            height: 100vh;
+            width: 100%;
+        }
+
+        #map,
+        #message {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row m-0 p-2" id="box">
+        <div class="col-4  overflow-auto" id="message">
+            <div class="row justify-content-between">
+                <div class="ml-3">
+                    <div class="form-group">
+                        <label for="inputcounties">請選擇 縣市</label>
+                        <select id="inputcounties" class="form-control">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputtowns">請選擇 鄉鎮區</label>
+                        <select id="inputtowns" class="form-control">
+                        </select>
+                    </div>
+
+
+                </div>
+                <div class="mr-3">
+                    <div class="my-2">
+                        <img src="/maskIcon_green_40px.png" alt="">
+                        <span>口罩數量 1000份以上</span>
+                    </div>
+                    <div class="my-2">
+                        <img src="/maskIcon_orange_40px.png" alt="">
+                        <span>口罩數量 1000份以下</span>
+                    </div>
+                    <div class="my-2">
+                        <img src="/maskIcon_red_40px.png" alt="">
+                        <span>口罩數量 已售完</span>
+                    </div>
+                </div>
+            </div>
+            <button id='test' class="btn btn-danger">測試按鈕</button>
+            <div class="row mt-5 px-3" id="storemessage">
+                <!-- create card 區域 -->
+            </div>
+            <template id="modules">
+                <div class="card w-100 my-2" id="cardmask">
+                    <h3 class="card-header">Title</h3>
+                    <div class="card-body">
+                        <h5 class="card-title">address</h5>
+                        <p class="card-text">phone
+                        </p>
+                        <p>成人口罩數量</p>
+                        <p>兒童口罩數量</p>
+                        <p>備註</p>
+                        <button class="btn btn-primary" id="loadmaskdata">帶我去</button>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <div id="map" class="col-8"></div>
+    </div>
+
+    <script>
+        function $getdata() {
+            let maskdata = new XMLHttpRequest();
+            maskdata.open('get',
+                'https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json?fbclid=IwAR03QVRRMDHgQC_XBIR62wBKePkGVs5kRyTMdaCpP032CjtFdu6uiA3m-Gc'
+            );
+            maskdata.onload = function () {
+                //把資料轉成JSON格式
+                let jsdata = JSON.parse(this.responseText)
+                // let country = jsdata.features[0].properties.name
+                console.log(jsdata)
+            };
+            maskdata.send();
+        }
+        $getcityname();
+
+        function $getcityname() {
+            let counties = document.querySelector('#inputcounties')
+            let towns = document.querySelector('#inputtowns')
+            let citiesdata = new XMLHttpRequest();
+            citiesdata.open('get',
+                'https://raw.githubusercontent.com/donma/TaiwanAddressCityAreaRoadChineseEnglishJSON/master/CityCountyData.json'
+            )
+            citiesdata.onload = function () {
+                let jsdata = JSON.parse(this.responseText);
+                
+                for (let i = 0; i < jsdata.length; i++) {
+                    counties.options.add(new Option(jsdata[i].CityName, '2'))
+                }
+
+                document.getElementById('inputcounties').addEventListener('change', function () {
+                    $cleandiv();
+                    let index = counties.selectedIndex;
+                    for (let i = 0; i < jsdata[index].AreaList.length; i++) {
+                        towns.options.add(new Option(jsdata[index].AreaList[i].AreaName, '2'))
+                    }
+
+                });
+            }
+            citiesdata.send();
+        }
+
+
+
+
+
+
+        let testbtn = document.getElementById('test')
+        testbtn.addEventListener('click', function () {
+            // $clonetemplate();
+            // console.log($getcounties());
+            // $cleandiv();
+            $getdata();
+        });
+    </script>
+
+    <script src="Google_Map_Function.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Apple_CSS.css">
+
+    <title>Apple Web</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-around">
+            <button class="btn btn-success" id="ipad">Ipad</button>
+            <button class="btn btn-danger" id="iphone">Iphone</button>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <img alt="" id="bigimg">
+                <div class="row text-center">
+                    <div class="col-6">
+                        <img src="img/box.jpg" style="width: 50px; height: 50px;" class="mx-auto d-block">
+                        <p>免額外付費的運送服務</p>
+                    </div>
+                    <div class="col-6">
+                        <img src="img/box-2.jpg" style="width: 50px; height: 50px;" class="mx-auto d-block">
+                        <p>免額外付費輕鬆退貨</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <h1>購買 Ipad</h1>
+                <h6>購買Ipad</h6>
+                <div id='color' class="d-flex flex-wrap">
+                    <h5 class="col-12 p-0">選擇外觀</h5>
+                    <div id="imgbox" class="d-flex flex-wrap col-12">
+                        <!-- img clone 區域 -->
+                    </div>
+                </div>
+                <template id="temp01">
+                    <button class="btn col-6 tempbtn">
+                        <img class="mx-auto d-block imgbox" style="width: 50px; height: 50px;">
+                        <small class="textbox"></small>
+                    </button>
+                </template>
+                <div id="memory">
+                    <h5>選擇儲存容量</h5>
+                </div>
+                <div id="wi-fi"></div>
+                <div id="laser"></div>
+                <div id="buy">
+                    <h2></h2>
+                    <small></small>
+                    <a href="#"></a>
+                    <div class="w-100">
+                        <button class="btn btn-primary col-10">加入購物袋</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let ipad = document.getElementById('ipad');
+        console.log(ipad);
+        ipad.addEventListener('click', function () {
+            // Cleanbox();
+            // Clone(ipadColor);
+            console.log(iphoneColor[1].type)
+        })
+
+        let iphone = document.getElementById('iphone');
+        iphone.addEventListener('click',function(){
+            Cleanbox();
+            Clone(iphoneColor);
+        });
+    </script>
+
+    <script src="Apple_Web_02.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

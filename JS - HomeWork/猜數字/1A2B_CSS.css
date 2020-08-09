@@ -1,0 +1,29 @@
+.container {
+    width: 100%;
+    min-width: 500px;
+    /* border: 2px solid red; */
+}
+
+.btn-group {
+    width: 100%;
+}
+
+.btn {
+    border: 2px solid #ced4da;
+}
+.input-group{
+    width: 100%;
+}
+
+.form-control {
+    height: auto;
+}
+.textbox{
+    height: 500px;
+}
+.list-group{
+    width: 100%;
+    height: 50vh;
+    overflow: auto;
+    border: 1px solid #ced4da;
+}

@@ -1,0 +1,25 @@
+* {
+    font-family: '微軟正黑體';
+}
+
+td,
+th {
+    border: 1px solid black;
+    width: 14.28%;
+    font-size: 25px;
+    font-weight: 900;
+    color: cornflowerblue;
+}
+
+tbody td {
+    height: 80px;
+    font-size: 40px;
+}
+
+.canhover:hover {
+    background-color: rgb(185, 230, 97);
+}
+
+#modal01-h{
+    height: 500px;
+}
