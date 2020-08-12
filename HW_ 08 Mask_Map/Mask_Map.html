@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <button id='test' class="btn btn-danger">測試按鈕</button>
+            <!-- <button id='test' class="btn btn-danger">測試按鈕</button> -->
             <div class="row mt-5 px-3" id="storemessage">
                 <!-- create card 區域 -->
             </div>
@@ -116,7 +116,7 @@
                 for (let i = 0; i < jsdata.length; i++) {
                     counties.options.add(new Option(jsdata[i].CityName, '2'))
                 }
-
+                
                 document.getElementById('inputcounties').addEventListener('change', function () {
                     $cleandiv();
                     let index = counties.selectedIndex;

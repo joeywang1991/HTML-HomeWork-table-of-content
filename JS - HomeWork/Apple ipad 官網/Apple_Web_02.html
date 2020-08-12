@@ -67,16 +67,17 @@
     </div>
 
     <script>
+
         let ipad = document.getElementById('ipad');
         console.log(ipad);
         ipad.addEventListener('click', function () {
-            // Cleanbox();
-            // Clone(ipadColor);
-            console.log(iphoneColor[1].type)
+            Cleanbox();
+            Clone(ipadColor);
+            // console.log(iphoneColor)
         })
 
         let iphone = document.getElementById('iphone');
-        iphone.addEventListener('click',function(){
+        iphone.addEventListener('click', function () {
             Cleanbox();
             Clone(iphoneColor);
         });

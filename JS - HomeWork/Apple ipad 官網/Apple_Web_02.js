@@ -17,10 +17,7 @@ const ipadColor = [{
 // Iphone
 
 const iphoneprice = [24900, 26900, 30400]
-const iphoneColor =[{
-    type: phone,
-    model:
-    [{
+const iphoneColor = [{
         'color': '白色',
         'producting': 'img/iphone11-white-select-2019.png',
         'btncolor': 'img/finish-white-201909.jpg'
@@ -49,8 +46,8 @@ const iphoneColor =[{
         'color': '(PRODUCT)RED',
         'producting': 'img/iphone11-red-select-2019.png',
         'btncolor': 'img/finish-red-201909.jpg'
-    }]
-}];
+    }
+];
 
 function CreateColor() {
     let btn = document.createElement('button')
@@ -65,18 +62,18 @@ function Cleanbox() {
 function Clone(x) {
     let temp = document.getElementById('temp01')
     let imgbox = document.getElementById('imgbox')
-    for (let i = 0; i < x.model.length; i++) {
+    for (let i = 0; i < x.length; i++) {
         let clone = temp.content.cloneNode(true);        
         imgbox.appendChild(clone)
         let btn = document.getElementsByClassName('tempbtn')[i]
         btn.setAttribute('onclick',`Changeimg(${i})`)
         let img = document.getElementsByClassName('imgbox')[i]
-        img.setAttribute('src', x.model[i].btncolor)
+        img.setAttribute('src', x[i].btncolor)
         let text = document.getElementsByClassName('textbox')[i]
-        text.innerText = x.model[i].color
+        text.innerText = x[i].color
     }
 }
 
-function Changeimg(item) {
-    console.log(item)
-}
+// function Changeimg(item) {
+//     console.log()
+// }

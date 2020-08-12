@@ -7,22 +7,22 @@ function initMap(LatLng) {
         }
     });
 
-    // map.data.loadGeoJson('https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json?fbclid=IwAR03QVRRMDHgQC_XBIR62wBKePkGVs5kRyTMdaCpP032CjtFdu6uiA3m-Gc');
+    map.data.loadGeoJson('https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json?fbclid=IwAR03QVRRMDHgQC_XBIR62wBKePkGVs5kRyTMdaCpP032CjtFdu6uiA3m-Gc');
 
     map.data.setStyle(function (feature) { //設定 marker 圖案，和在甚麼條件下換圖案
         let mask_adult = feature.getProperty('mask_adult')
         let mask_child = feature.getProperty('mask_child')
         if ((mask_adult + mask_child) == 0) {
             return {
-                icon: '/maskIcon_red_40px.png'
+                icon: 'maskIcon_red_40px.png'
             }
         } else if ((mask_adult + mask_child) <= 1000) {
             return {
-                icon: '/maskIcon_orange_40px.png'
+                icon: 'maskIcon_orange_40px.png'
             }
         } else {
             return {
-                icon: '/maskIcon_green_40px.png'
+                icon: 'maskIcon_green_40px.png'
             }
         }
     });

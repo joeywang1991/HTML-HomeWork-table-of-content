@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        table,
+        td {
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+   
+</head>
+
+<body>
+    <table>
+        <caption>肺炎確診統計</caption>
+        <thead>
+            <tr>
+                <td>國家</td>
+                <td>確診</td>
+                <td>死亡</td>
+                <td>治癒</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>全球統計</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- <script>
+        //建立Virus資料，傳入Table中
+        //全球肺炎統計表
+        let covid = [{
+                country: '台灣',
+                sick: 455,
+                cure: 440,
+                death: 7
+            },
+            {
+                country: '美國',
+                sick: 3970000,
+                cure: 1160000,
+                death: 144000
+            },
+            {
+                country: '台灣',
+                sick: 2170000,
+                cure: 1470000,
+                death: 81500
+            },
+            {
+                country: '巴西',
+                sick: 1190000,
+                cure: 753000,
+                death: 28700
+            },
+            {
+                country: '俄羅斯',
+                sick: 789000,
+                cure: 572000,
+                death: 12700
+            }
+        ]
+
+        var country = document.querySelectorAll("tbody tr td:first-child");
+        var sick = document.querySelectorAll("tbody tr td:nth-child(2)");
+        var cure = document.querySelectorAll("tbody tr td:nth-child(3)");
+        var death = document.querySelectorAll("tbody tr td:last-child");
+        for (let i = 0; i < covid.length; i++) {
+            country[i].innerText = covid[i].country;
+            sick[i].innerText = covid[i].sick;
+            cure[i].innerText = covid[i].cure;
+            death[i].innerText = covid[i].death;
+        }
+    </script> -->
+    <script src="/virusdata.js"></script>
+</body>
+
+</html>

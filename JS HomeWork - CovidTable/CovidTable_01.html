@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        td {
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <caption>肺炎確診統計</caption>
+        <thead>
+            <tr>
+                <td>國家</td>
+                <td>確診</td>
+                <td>死亡</td>
+                <td>治癒</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>全球統計</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        //建立Virus資料，傳入Table中
+        //全球肺炎統計表
+
+        var taiwan = ['台灣', '455', '440', '7'];
+        var america = ['美國', '397萬', '116萬', '14.4萬'];
+        var brazil = ['巴西', '217萬', '147萬', '8.15萬'];
+        var india = ['印度', '119萬', '75.3萬', '2.87萬'];
+        var russia = ['俄羅斯', '78.9萬', '57.2萬', '1.27萬'];
+
+        var virus = [taiwan, america, brazil, india, russia];
+        var country = document.querySelectorAll("tbody tr td:first-child");
+        var sick = document.querySelectorAll("tbody tr td:nth-child(2)");
+        var cure = document.querySelectorAll("tbody tr td:nth-child(3)");
+        var death = document.querySelectorAll("tbody tr td:last-child");
+        for (let i = 0; i < virus.length; i++) {
+            country[i].innerText = virus[i][0];
+            sick[i].innerText = virus[i][1];
+            cure[i].innerText = virus[i][2];
+            death[i].innerText = virus[i][3];
+        }
+
+    </script>
+</body>
+
+</html>
